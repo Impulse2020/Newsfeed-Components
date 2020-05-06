@@ -112,3 +112,58 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function componentCreator(object){
+  let articleDiv = document.createElement('div');
+  let articleTitle = document.createElement('h2');
+  let articleDate = document.createElement('p');
+  let oneParagraph = document.createElement('p');
+  let twoParagraph = document.createElement('p');
+  let threeParagraph = document.createElement('p');
+  let articleSpan = document.createElement('span');
+  // creates the variables that create the html elements
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(oneParagraph);
+  articleDiv.appendChild(twoParagraph);
+  articleDiv.appendChild(threeParagraph);
+  articleDiv.appendChild(articleSpan);
+  //appends all the elements to the article div
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  articleSpan.classList.add('expandButton');
+  // adds classes to elements
+  articleDate.textContent = object.date
+  articleTitle.textContent = object.title
+  oneParagraph.textContent = object.firstParagraph
+  twoParagraph.textContent = object.secondParagraph
+  threeParagraph.textContent = object.thirdParagraph
+  articleSpan.textContent = 'Span';
+  //
+  articleSpan.addEventListener('click', event => {
+    articleDiv.classList.toggle('article-open')
+  })
+  return articleDiv;
+}
+
+data[4] = {
+  title: 'Pirates vs cowboys',
+  date: 'start - end',
+  firstParagraph: 'Gunwalls reef sails lookout fire ship line maroon pirate plunder scuppers hail-shot. Snow bilged on her anchor marooned tender jury mast black jack spirits mizzenmast Gold Road provost. Brethren of the Coast cackle fruit barkadeer black jack warp lugger yo-ho-ho Chain Shot brigantine jury mast.',
+  secondParagraph: 'American Main Buccaneer pillage heave down Privateer league gibbet log fluke galleon. Loaded to the gunwalls me mutiny hornswaggle Corsair transom swab pillage avast parley. Hulk yo-ho-ho Chain Shot barkadeer scourge of the seven seas spanker black jack skysail marooned brig.',
+  thirdParagraph: 'Snow piracy blow the man down spanker crack Jennys tea cup chase guns handsomely spyglass flogging quarter. Cog scallywag pinnace long boat weigh anchor draft mizzen gun lass booty. Jack Ketch overhaul gunwalls coxswain quarter sloop transom lanyard scourge of the seven seas wherry.',
+} 
+data.push({
+  title:'Pirates vs Skeletons',
+  date:'Now - eternity',
+  firstParagraph:'Scourge of the seven seas prow fire in the hole marooned to go on account Pirate Round reef take a caulk yawl gaff. Booty bring a spring upon her cable rutters interloper lateen sail ballast coxswain trysail league poop deck. Tender pirate yawl ho lugsail fore bilge spike Cat o nine tails Blimey.',
+  secondParagraph:'Yellow Jack scallywag yard execution dock weigh anchor reef long boat bilge water killick matey. Wherry galleon hogshead mizzen doubloon lugsail pink gangplank coffer lanyard. Pieces of Eight weigh anchor avast long clothes draft swing the lead clipper nipperkin salmagundi mizzenmast.',
+  thirdParagraph:'Crows nest take a caulk Admiral of the Black run a rig ahoy grapple knave Nelsons folly quarterdeck Blimey. Chandler scuppers black jack quarter spanker gun jib cable cog Cat o nine tails. Salmagundi hulk Buccaneer handsomely Spanish Main me Arr strike colors gangway pressgang.',
+  })
+  
+data.forEach(element =>{
+  const articleDiv = componentCreator(element)
+  document.body.appendChild(articleDiv)
+})  
+
+
