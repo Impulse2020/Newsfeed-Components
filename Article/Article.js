@@ -153,7 +153,14 @@ data[4] = {
   secondParagraph: 'American Main Buccaneer pillage heave down Privateer league gibbet log fluke galleon. Loaded to the gunwalls me mutiny hornswaggle Corsair transom swab pillage avast parley. Hulk yo-ho-ho Chain Shot barkadeer scourge of the seven seas spanker black jack skysail marooned brig.',
   thirdParagraph: 'Snow piracy blow the man down spanker crack Jennys tea cup chase guns handsomely spyglass flogging quarter. Cog scallywag pinnace long boat weigh anchor draft mizzen gun lass booty. Jack Ketch overhaul gunwalls coxswain quarter sloop transom lanyard scourge of the seven seas wherry.',
 } 
-
+data.push({
+  title:'Pirates vs Skeletons',
+  date:'Now - eternity',
+  firstParagraph:'Scourge of the seven seas prow fire in the hole marooned to go on account Pirate Round reef take a caulk yawl gaff. Booty bring a spring upon her cable rutters interloper lateen sail ballast coxswain trysail league poop deck. Tender pirate yawl ho lugsail fore bilge spike Cat o nine tails Blimey.',
+  secondParagraph:'Yellow Jack scallywag yard execution dock weigh anchor reef long boat bilge water killick matey. Wherry galleon hogshead mizzen doubloon lugsail pink gangplank coffer lanyard. Pieces of Eight weigh anchor avast long clothes draft swing the lead clipper nipperkin salmagundi mizzenmast.',
+  thirdParagraph:'Crows nest take a caulk Admiral of the Black run a rig ahoy grapple knave Nelsons folly quarterdeck Blimey. Chandler scuppers black jack quarter spanker gun jib cable cog Cat o nine tails. Salmagundi hulk Buccaneer handsomely Spanish Main me Arr strike colors gangway pressgang.',
+  })
+  
 data.forEach(element =>{
   const articleDiv = componentCreator(element)
   document.body.appendChild(articleDiv)
