@@ -117,26 +117,46 @@ function componentCreator(object){
   let articleDiv = document.createElement('div');
   let articleTitle = document.createElement('h2');
   let articleDate = document.createElement('p');
-  let firstParagraph = document.createElement('p');
-  let secondParagraph = document.createElement('p');
-  let thirdParagraph = document.createElement('p');
+  let oneParagraph = document.createElement('p');
+  let twoParagraph = document.createElement('p');
+  let threeParagraph = document.createElement('p');
   let articleSpan = document.createElement('span');
   // creates the variables that create the html elements
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(articleDate);
-  articleDiv.appendChild(firstParagraph);
-  articleDiv.appendChild(secondParagraph);
-  articleDiv.appendChild(thirdParagraph);
+  articleDiv.appendChild(oneParagraph);
+  articleDiv.appendChild(twoParagraph);
+  articleDiv.appendChild(threeParagraph);
   articleDiv.appendChild(articleSpan);
   //appends all the elements to the article div
   articleDiv.classList.add('article');
   articleDate.classList.add('date');
   articleSpan.classList.add('expandButton');
-
+  // adds classes to elements
+  articleDate.textContent = object.date
+  articleTitle.textContent = object.title
+  oneParagraph.textContent = object.firstParagraph
+  twoParagraph.textContent = object.secondParagraph
+  threeParagraph.textContent = object.thirdParagraph
+  articleSpan.textContent = 'Span';
+  //
+  articleSpan.addEventListener('click', event => {
+    articleDiv.classList.toggle('article-open')
+  })
+  return articleDiv;
 }
 
+data[4] = {
+  title: 'Pirates vs cowboys',
+  date: 'start - end',
+  firstParagraph: 'Gunwalls reef sails lookout fire ship line maroon pirate plunder scuppers hail-shot. Snow bilged on her anchor marooned tender jury mast black jack spirits mizzenmast Gold Road provost. Brethren of the Coast cackle fruit barkadeer black jack warp lugger yo-ho-ho Chain Shot brigantine jury mast.',
+  secondParagraph: 'American Main Buccaneer pillage heave down Privateer league gibbet log fluke galleon. Loaded to the gunwalls me mutiny hornswaggle Corsair transom swab pillage avast parley. Hulk yo-ho-ho Chain Shot barkadeer scourge of the seven seas spanker black jack skysail marooned brig.',
+  thirdParagraph: 'Snow piracy blow the man down spanker crack Jennys tea cup chase guns handsomely spyglass flogging quarter. Cog scallywag pinnace long boat weigh anchor draft mizzen gun lass booty. Jack Ketch overhaul gunwalls coxswain quarter sloop transom lanyard scourge of the seven seas wherry.',
+} 
 
 data.forEach(element =>{
-  const article = element
-  document.appendChild(article)
+  const articleDiv = componentCreator(element)
+  document.body.appendChild(articleDiv)
 })  
+
+
